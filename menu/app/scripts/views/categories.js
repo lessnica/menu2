@@ -15,7 +15,13 @@ Menu.Views = Menu.Views || {};
     initialize: function () {
 
       this.collections = new Menu.Collections();
+      this.request();
+      this.test = 1;
       this.listenTo(this.model, 'change', this.render);
+    },
+
+    request: function() {
+     /* var xhr = new XMLHttpRequest();*/
     },
 
     render: function () {
