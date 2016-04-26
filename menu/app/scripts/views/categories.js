@@ -6,7 +6,7 @@ Menu.Views = Menu.Views || {};
   'use strict';
 
   Menu.Views.Categories = Backbone.View.extend({
-    el:'.collections',
+    el:'.categories',
 
     template: JST['app/scripts/templates/categories.ejs'],
 
@@ -14,14 +14,28 @@ Menu.Views = Menu.Views || {};
 
     initialize: function () {
 
-      this.collections = new Menu.Collections();
-      this.request();
-      this.test = 1;
-      this.listenTo(this.model, 'change', this.render);
+      this.collections = new Menu.Collections.Categories();
+      this.request(this.actualCategories);
+
+      /*this.listenTo(this.model, 'change', this.render);*/
     },
 
-    request: function() {
-     /* var xhr = new XMLHttpRequest();*/
+    actualCategories: {},
+
+    request: function(actualCategories) {
+
+     var xhr = new XMLHttpRequest();
+      xhr.open('GET','/categories.json',true);
+      xhr.onreadystatechange = function () {
+       if (xhr.readyState ===4){
+         if (xhr.status === 200) {
+           actualCategories = JSON.parse(xhr.responseText);
+           console.log(actualCategories);
+           console.log('ready');
+         }
+       }
+      }
+      xhr.send();
     },
 
     render: function () {

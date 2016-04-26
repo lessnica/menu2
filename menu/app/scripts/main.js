@@ -8,7 +8,9 @@ window.Menu = {
   Routers: {},
   init: function () {
     'use strict';
+
     console.log('Hello from Backbone!');
+    var view = new Menu.Views.Categories();
   }
 };
 
