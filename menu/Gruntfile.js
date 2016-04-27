@@ -113,7 +113,7 @@ module.exports = function (grunt) {
       }
     },
     clean: {
-      dist: ['.tmp', '<%= yeoman.dist %>/*'],
+      dist: ['.tmp', '<%= yeoman.dist %>/*','app/styles/main.css','app/scripts/templates.js'],
       server: '.tmp'
     },
     jshint: {
@@ -141,7 +141,7 @@ module.exports = function (grunt) {
         sourcemap: true,
         /*includePaths: ['app/bower_components']*/
 
- 
+
       },
       dist: {
         files: [{
@@ -239,8 +239,45 @@ module.exports = function (grunt) {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= yeoman.dist %>/.htaccess'
         }]
+      },
+
+      main: {
+        files: [
+          // includes files within path
+          //{expand: true, src: ['app/scripts/*'], dest: 'dist/', filter: 'isFile'},
+
+          // includes files within path and its sub-directories+
+          //{expand: true, src: ['app/scripts/**'], dest: 'dist/'},
+          //
+          //// makes all src relative to cwd
+          {expand: true, cwd: 'app/scripts/', src: ['**'], dest: 'dist/scripts'},
+          {expand: true, cwd: 'app/bower_components/', src: ['**'], dest: 'dist/bower_components'},
+          {expand: true, cwd: '.tmp/scripts/', src: ['*.js'], dest: 'dist/scripts'},
+          //
+          //// flattens results to a single level
+          //{expand: true, flatten: true, src: ['app/scripts/**'], dest: 'dist/', filter: 'isFile'},
+        ]
+      },
+      main2: {
+        files: [
+          // includes files within path
+          //{expand: true, src: ['app/scripts/*'], dest: 'dist/', filter: 'isFile'},
+
+          // includes files within path and its sub-directories+
+          //{expand: true, src: ['app/scripts/**'], dest: 'dist/'},
+          //
+          //// makes all src relative to cwd
+
+
+          {expand: true, cwd: '.tmp/scripts/', src: ['*.js'], dest: 'app/scripts'},
+          {expand: true, cwd: '.tmp/styles/', src: ['*.css'], dest: 'app/styles'},
+          //
+          //// flattens results to a single level
+          //{expand: true, flatten: true, src: ['app/scripts/**'], dest: 'dist/', filter: 'isFile'},
+        ]
       }
     },
+
     jst: {
       compile: {
         files: {
@@ -278,6 +315,25 @@ module.exports = function (grunt) {
     }
 
     if (target === 'test') {
+      return grunt.tsk.run ([
+        'clean:dist',
+        'createDefaultTemplate',
+        'jst',
+        'sass:dist',
+        'useminPrepare',
+        'imagemin',
+        'htmlmin',
+        /*'concat',
+        'cssmin',
+        'uglify',*/
+        'copy',
+        'rev',
+        'usemin',
+        'sass:server',
+        'connect:test',
+        'open:test',
+        'watch'
+      ]);
       return grunt.task.run([
         'clean:server',
         'createDefaultTemplate',
@@ -322,18 +378,40 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+
     'createDefaultTemplate',
     'jst',
+    'copy:main',
     'sass:dist',
     'useminPrepare',
     'imagemin',
     'htmlmin',
     'concat',
     'cssmin',
-    'uglify',
-    'copy',
-    'rev',
-    'usemin'
+    //'uglify',
+    //'copy,
+    /*'rev',
+    'usemin'*/
+  ]);
+
+  grunt.registerTask('buildmin', [
+    'clean:dist',
+
+    'createDefaultTemplate',
+    'jst',
+    'sass:dist',
+    'copy:main2'
+
+
+    /*'useminPrepare',
+    'imagemin',
+    'htmlmin',
+    'concat',
+    'cssmin',
+    //'uglify',
+    //'copy,
+    /*'rev',
+     'usemin'*/
   ]);
 
   grunt.registerTask('default', [

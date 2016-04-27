@@ -15,27 +15,29 @@ Menu.Views = Menu.Views || {};
     initialize: function () {
 
       this.collections = new Menu.Collections.Categories();
-      this.request(this.actualCategories);
+      this.actualCategories = this.request();
+      console.log(this.actualCategories);
 
       /*this.listenTo(this.model, 'change', this.render);*/
     },
 
     actualCategories: {},
 
-    request: function(actualCategories) {
+    request: function() {
+      var reqArray;
+      var request = $.ajax({
+        method:'GET',
+        url:'/categories.json',
+        dataType:'json',
+        async:false,
+        error: function(xhr,status,error) {
+        reqArray = {};
+        },
 
-     var xhr = new XMLHttpRequest();
-      xhr.open('GET','/categories.json',true);
-      xhr.onreadystatechange = function () {
-       if (xhr.readyState ===4){
-         if (xhr.status === 200) {
-           actualCategories = JSON.parse(xhr.responseText);
-           console.log(actualCategories);
-           console.log('ready');
-         }
-       }
-      }
-      xhr.send();
+      }).done(function(data,status,xhr) {
+         reqArray = data;
+      });
+      return reqArray;
     },
 
     render: function () {
