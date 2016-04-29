@@ -6,7 +6,12 @@ Menu.Collections = Menu.Collections || {};
   'use strict';
 
   Menu.Collections.Categories = Backbone.Collection.extend({
-
+    url: '/categories.json',
+    initialize: function () {
+        this.fetch({
+            reset: true
+        });
+    },
     model: Menu.Models.Categories
 
   });

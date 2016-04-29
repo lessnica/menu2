@@ -15,13 +15,21 @@ Menu.Views = Menu.Views || {};
     initialize: function () {
 
       this.collections = new Menu.Collections.Categories();
-      this.actualCategories = this.request();
+      this.listenTo(this.collections, 'reset', this.onFetch)
+      //this.actualCategories = this.request();
       console.log(this.actualCategories);
 
       /*this.listenTo(this.model, 'change', this.render);*/
     },
 
     actualCategories: {},
+
+    onFetch: function() {
+      console.log(this.collections);
+      this.collections.forEach(function(element, index, array){
+      var view = new Menu.Views.CategoryItemView(element);
+      });
+    },
 
     request: function() {
       var reqArray;
