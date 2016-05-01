@@ -1,1 +1,1 @@
-[{"img":"http://www.rabstol.net/uploads/gallery/main/348/rabstol_net_salad_38.jpg", "name":"Salad", "file":"salads.json"}, {"img":"http://dolgozhit.com/wp-content/uploads/2016/01/syp.jpg", "name":"Soup", "file":"Soups.json"}]
+[{"img":"/images/salads.jpg", "name":"Salad", "file":"salads.json"}, {"img":"/images/soups.jpg", "name":"Soup", "file":"Soups.json"}]

@@ -44,7 +44,8 @@ http.createServer(function(req,res) {
 
     if (req.url.includes('.jpg')) {
       res.writeHead(200, { 'Content-Type': 'image/jpeg' });
-      fs.readFile(req.url.replace('/', ''), function (err, data) {
+console.log(req.url);
+      fs.readFile('../'+req.url, function (err, data) {
         res.end(data);
       });
     };

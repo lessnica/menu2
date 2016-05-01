@@ -13,6 +13,9 @@ Menu.Models = Menu.Models || {};
     },
 
     defaults: {
+      img:'',
+      name:'Unknown',
+      description: ''
     },
 
     validate: function(attrs, options) {

@@ -6,7 +6,9 @@ Menu.Views = Menu.Views || {};
   'use strict';
 
   Menu.Views.Categories = Backbone.View.extend({
-    el:'.categories',
+    //el:'.categories',
+    tagName:'div',
+    classNane:'row categories',
 
     template: JST['app/scripts/templates/categories.ejs'],
 
@@ -16,8 +18,8 @@ Menu.Views = Menu.Views || {};
 
       this.collections = new Menu.Collections.Categories();
       this.listenTo(this.collections, 'reset', this.onFetch)
-      //this.actualCategories = this.request();
       console.log(this.actualCategories);
+      this.render();
 
       /*this.listenTo(this.model, 'change', this.render);*/
     },
@@ -26,30 +28,22 @@ Menu.Views = Menu.Views || {};
 
     onFetch: function() {
       console.log(this.collections);
-      this.collections.forEach(function(element, index, array){
-      var view = new Menu.Views.CategoryItemView(element);
-      });
-    },
-
-    request: function() {
-      var reqArray;
-      var request = $.ajax({
-        method:'GET',
-        url:'/categories.json',
-        dataType:'json',
-        async:false,
-        error: function(xhr,status,error) {
-        reqArray = {};
-        },
-
-      }).done(function(data,status,xhr) {
-         reqArray = data;
-      });
-      return reqArray;
+      this.collections.each(function(element, index, array){
+        console.log('createviewstart',element);
+      var view = new Menu.Views.CategoryItemView({model:element});
+      },this);
     },
 
     render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
+      $('.page-header').append(this.$el);
+      //this.$el.html(this.template(this.model.toJSON()));
+    },
+
+    onDelete:function() {
+
+      this.collections.remove();
+      Backbone.trigger('viewDelete');
+      this.remove(); // this.$el.remove();
     }
 
   });

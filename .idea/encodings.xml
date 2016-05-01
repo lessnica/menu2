@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/routes/categories.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/categoryitem.ejs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/dishitem.ejs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/views/categories.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/views/categoryitem.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/views/dish.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/views/dishitem.js" charset="UTF-8" />
+  </component>
+</project>

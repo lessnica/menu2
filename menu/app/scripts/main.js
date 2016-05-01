@@ -10,7 +10,8 @@ window.Menu = {
     'use strict';
 
     console.log('Hello from Backbone!');
-    var view = new Menu.Views.Categories();
+    var router = new Menu.Routers.Categories();
+    Backbone.history.start();
   }
 };
 

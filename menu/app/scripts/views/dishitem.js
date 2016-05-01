@@ -5,9 +5,9 @@ Menu.Views = Menu.Views || {};
 (function () {
   'use strict';
 
-  Menu.Views.CategoryItemView = Backbone.View.extend({
+  Menu.Views.DishItemView = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/categoryitem.ejs'],
+    template: JST['app/scripts/templates/dishitem.ejs'],
 
     tagName: 'div',
 
@@ -16,12 +16,12 @@ Menu.Views = Menu.Views || {};
     className: 'col-xs-6 col-sm-4 col-md-3',
 
     events: {
-      'click':'onCategory'
+      'click .dish':'dishDetail',
+      'click .popup':'dishDetailHide'
     },
 
     initialize: function () {
-      console.log('kkkkkkkk');
-      this.listenTo(Backbone,'viewDelete',this.onDelete);
+      this.listenTo(Backbone,'dishViewDelete',this.onDelete);
 
 
       this.render();
@@ -36,20 +36,26 @@ Menu.Views = Menu.Views || {};
       var bindings = {
         img: {selector:'.image',
           elAttribute:'src'},
-        name:[{selector:'.categoryName'},
+        name:[{selector:'.dishName'},
           {selector:'.image',
-            elAttribute:'alt'}]
-      };
+            elAttribute:'alt'}],
+        description:'.dishDescription'
+    };
       this.modelBinder.bind(this.model,this.el,bindings);
 
      //$('body').append(this.$el.html(this.template()).find('.image').attr('src',this.model.get('img')));
     },
 
-    onCategory: function() {
-      console.log('clicked');
-      Backbone.trigger('categoryClicked', this.model.get('name'), this.model.get('json'));
-
+    dishDetail: function() {
+      this.$el.parent().find('.dish').addClass('halfopacity');
+      this.$el.find('.popup').removeClass('hide');
     },
+
+    dishDetailHide: function() {
+      this.$el.parent().find('.dish').removeClass('halfopacity');
+      this.$el.find('.popup').addClass('hide');
+    },
+
 
     onDelete:function() {
       this.model.off();

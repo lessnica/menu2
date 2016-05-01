@@ -7,7 +7,13 @@ Menu.Collections = Menu.Collections || {};
 
   Menu.Collections.Dish = Backbone.Collection.extend({
 
-    model: Menu.Models.Dish
+    model: Menu.Models.Dish,
+    initialize:function(category){
+       this.url = category+'.json';
+      this.fetch({
+        reset:true
+      });
+    }
 
   });
 

@@ -89,3 +89,33 @@ body {
     border-bottom: 0;
   }
 }
+
+
+.halfopacity {
+  opacity:0.5;
+}
+
+.hide {
+  display:none;
+}
+
+.popup {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  height: 60vh;
+  width: 30vw;
+  margin-top: -30vh;
+  margin-left: -15vw;
+  opacity:1;
+  background:white;
+}
+.popup img {
+  margin:0 auto;
+}
+.popup p {
+  overflow:auto;
+}
+
+
