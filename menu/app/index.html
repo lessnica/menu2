@@ -44,35 +44,41 @@
     <main>
       <section class="container-fluid">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-sm-5 col-md-3">
             <h4>Items in Your basket:</h4>
-            <ul class="basket list-group">
-              <li class="list-group-item">Order 1
-                <button class="">-</button>
-                <span class="amount">1</span>
-                <button class="">+</button>
-                <span class="divider"></span>
-                <button class="delete btn-danger pull-right">X</button>
+            <ul class="basket list-group container-fluid">
+              <li class="row list-group-item text-center text-bold">
+                <div class="order-name col-xs-5 col-sm-5 col-md-5 text-left">Order item</div>
+                <div class="amount col-xs-3 col-sm-3 col-md-3">Amount</div>
+                <div class="price col-xs-3 col-sm-3 col-md-3">Price</div>
               </li>
-              <li class="list-group-item">Order 2
-                <button class="">-</button>
-                <span class="amount">1</span>
-                <button class="">+</button>
-                <span class="divider"></span>
-                <button class="delete btn-danger pull-right">X</button>
+              <li class="row list-group-item text-center">
+                <div class="order-name col-xs-5 col-sm-5 col-md-5 text-left">Order 1 veryLongWordInOn secondLongWord and somethingElse</div>
+                <div class="col-xs-1 col-sm-1 col-md-1"><button class="">-</button></div>
+                <div class="amount col-xs-1 col-sm-1 col-md-1 ">1</div>
+                <div class="col-xs-1 col-sm-1 col-md-1 "><button class=''>+</button></div>
+                <div class="price col-xs-3 col-sm-3 col-md-3">160.00</div>
+                <div class="col-xs-1 col-sm-1 col-md-1"><button class=" delete btn-danger pull-right">X</button></div>
               </li>
-              <li class="list-group-item">Order 3
-
-              </li>
-              <li class="list-group-item">Order 4
-
+              <li class="row list-group-item text-center">
+                <div class="order-name col-xs-5 col-sm-5 col-md-5 text-left">Order 1 veryLongWordInOneLine secondLongWord and somethingElse</div>
+                <div class="col-xs-1 col-sm-1 col-md-1"><button class="">-</button></div>
+                <div class="amount col-xs-1 col-sm-1 col-md-1">1</div>
+                <div class="col-xs-1 col-sm-1 col-md-1"><button class=''>+</button></div>
+                <div class="price col-xs-3 col-sm-3 col-md-3">160.00</div>
+                <div class="col-xs-1 col-sm-1 col-md-1"><button class=" delete btn-danger pull-right">X</button></div>
               </li>
             </ul>
+            <div class="container-fluid text-bold order-sum">
+              <div class="col-xs-7 col-sm-7 col-md-7  text-right h4">Total price:</div>
+              <div class="total-price col-xs-5 col-sm-5 col-md-5 text-right h4">8320.00</div>
+            </div>
+            <button class="btn btn-success pull-right">Confirm order <i class="glyphicon glyphicon-shopping-cart"></i></button>
           </div>
-          <div class="col-md-9">
+          <div class="col-sm-7 col-md-9 text-center">
             <h1 class="page-header">Choose food You need:</h1>
             <div class="row categories">
-
+              <!--Categories View will be render here-->
             </div>
           </div>
         </div>
@@ -80,7 +86,7 @@
     </main>
     <footer class="panel-footer">
       <p class="">Made with using Bootstrap©</p>
-      <p class="">© 2016 Lesser</p>
+      <p class="">© 2016 LesSer</p>
     </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

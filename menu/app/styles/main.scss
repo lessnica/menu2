@@ -11,8 +11,8 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+//    padding-top: 20px;
+//    padding-bottom: 20px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -118,4 +118,36 @@ body {
   overflow:auto;
 }
 
+.basket {
+  padding: 0 10px;
+}
 
+.basket li div {
+  padding: 0;
+}
+
+.basket > li > div:first-child {
+  overflow: auto;
+}
+
+.basket button {
+  border: none;
+}
+
+.order-sum {
+  padding: 0;
+  margin: 30px 0 15px 0;
+}
+
+.order-sum div {
+  font-weight: 800;
+  padding: 0;
+}
+
+main {
+  min-height: calc(100vh - 81px - 72px);
+}
+
+.text-bold {
+  font-weight: bold;
+}

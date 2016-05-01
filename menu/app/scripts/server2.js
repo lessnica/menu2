@@ -10,7 +10,7 @@ http.createServer(function(req,res) {
       fs.readFile('../'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
 
     if(req.url.includes('json')) {
       console.log('json request');
@@ -28,37 +28,42 @@ http.createServer(function(req,res) {
         console.log(req.url);
         res.end(data);
       });
-    };
+    }
 
     if (req.url.includes('js') && !req.url.includes('json')) {
       res.writeHead(200, { 'Content-Type': 'text/javascript' });
       fs.readFile('../'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
 
     if (req.url.includes('favicon')) {
       res.writeHead(200, { 'Content-Type': 'image/x-icon' });
-      res.end();
-    };
-
-    if (req.url.includes('.jpg')) {
-      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
-console.log(req.url);
       fs.readFile('../'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
+
+    if (req.url.includes('.jpg')) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+    fs.readFile('../'+req.url, function (err, data) {
+      res.end(data);
+    });
+  }
+
+    if (req.url.includes('.woff2')) {
+      res.writeHead(200, { 'Content-Type': 'application/font-woff' });
+    fs.readFile('../'+req.url, function (err, data) {
+      res.end(data);
+    });
+  }
 
     if (req.url.includes('/fetch')) {
-      console.log(fetch);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       fs.readFile('todolist.json', function (err, data) {
         res.end(data);
       });
     }
-
-
   }
 
   if (req.method === 'POST') {
