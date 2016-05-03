@@ -11,9 +11,7 @@ Menu.Views = Menu.Views || {};
 
     tagName: 'div',
 
-    id: '',
-
-    className: 'col-xs-6 col-sm-4 col-md-3',
+   className: 'col-xs-6 col-sm-4 col-md-3',
 
     events: {
       'click':'onCategory'

@@ -161,11 +161,15 @@ main {
 }
 
 .right-block {
-  padding:25px;
+//  padding:25px;
 }
 
 @media screen and (max-width: 760px) {
-.popup {
-  margin-left:0;
+  .popup {
+    margin-left:0;
+  }
 }
+
+.image, .popup .image {
+  margin-bottom: 2px;
 }

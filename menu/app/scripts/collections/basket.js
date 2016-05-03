@@ -5,9 +5,9 @@ Menu.Collections = Menu.Collections || {};
 (function () {
   'use strict';
 
-  Menu.Collections.Busket = Backbone.Collection.extend({
+  Menu.Collections.Basket = Backbone.Collection.extend({
 
-    model: Menu.Models.Busket
+    model: Menu.Models.Basket
 
   });
 

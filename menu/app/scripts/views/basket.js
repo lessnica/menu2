@@ -5,9 +5,9 @@ Menu.Views = Menu.Views || {};
 (function () {
   'use strict';
 
-  Menu.Views.Busket = Backbone.View.extend({
+  Menu.Views.Basket = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/busket.ejs'],
+    template: JST['app/scripts/templates/basket.ejs'],
 
     tagName: 'div',
 

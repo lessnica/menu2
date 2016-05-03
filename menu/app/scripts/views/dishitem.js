@@ -11,13 +11,12 @@ Menu.Views = Menu.Views || {};
 
     tagName: 'div',
 
-    id: '',
-
-    className: 'col-xs-6 col-sm-4 col-md-3',
+   className: 'col-xs-6 col-sm-4 col-md-3',
 
     events: {
       'click .dish':'dishDetail',
-      'click .close':'dishDetailHide'
+      'click .close':'dishDetailHide',
+      'click .btn-add':'dishAdd'
     },
 
     initialize: function () {
@@ -49,7 +48,7 @@ Menu.Views = Menu.Views || {};
     },
 
     dishDetail: function() {
-      if(this.switcher) return;
+      if(this.switcher || $(event.target).hasClass('btn-add')) return;
       this.$el.parent().find('.dish').addClass('halfopacity');
       this.$el.find('.popup').removeClass('hide');
       Backbone.trigger('popup',1);
@@ -62,10 +61,14 @@ Menu.Views = Menu.Views || {};
     },
 
     popupVar:function(switcher){
-      console.log(this.switcher);
       this.switcher = switcher;
     },
 
+    dishAdd: function() {
+      console.log(this.model.get('dishId'));
+      Backbone.trigger('dishAdded', this.model.get('dishId'));
+      this.dishDetailHide();
+    },
 
     onDelete:function() {
       this.model.off();

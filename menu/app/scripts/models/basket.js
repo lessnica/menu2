@@ -5,7 +5,7 @@ Menu.Models = Menu.Models || {};
 (function () {
   'use strict';
 
-  Menu.Models.Busket = Backbone.Model.extend({
+  Menu.Models.Basket = Backbone.Model.extend({
 
     url: '',
 

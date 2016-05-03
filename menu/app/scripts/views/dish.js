@@ -23,8 +23,8 @@ this.render();
     },
 
     onFetch:function(){
-      this.collection.each(function(element,item,array) {
-        console.log('dishviewcreated',element);
+      this.collection.each(function(element,index,array) {
+        //console.log('dishviewcreated',element);
         var view = new Menu.Views.DishItemView({model:element});
       });
     },

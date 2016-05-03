@@ -5,7 +5,7 @@ Menu.Routers = Menu.Routers || {};
 (function () {
   'use strict';
 
-  Menu.Routers.Busket = Backbone.Router.extend({
+  Menu.Routers.Basket = Backbone.Router.extend({
 
   });
 
