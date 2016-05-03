@@ -39,7 +39,8 @@ Menu.Views = Menu.Views || {};
         name:[{selector:'.dishName'},
           {selector:'.image',
             elAttribute:'alt'}],
-        description:'.dishDescription'
+        description:'.dishDescription',
+        price:'.price'
     };
       this.modelBinder.bind(this.model,this.el,bindings);
 

@@ -10,7 +10,7 @@ Menu.Views = Menu.Views || {};
     template: JST['app/scripts/templates/dish.ejs'],
 
     tagName:'div',
-    classNane:'row categories',
+    className:'row categories',
 
     events: {},
 
@@ -19,7 +19,7 @@ Menu.Views = Menu.Views || {};
       //this.listenTo(this.model, 'change', this.render);
       this.collection = new Menu.Collections.Dish(category);
       this.listenTo(this.collection, 'reset',this.onFetch);
-
+this.render();
     },
 
     onFetch:function(){
@@ -30,7 +30,7 @@ Menu.Views = Menu.Views || {};
     },
 
     render: function () {
-
+      $('.right-block').append(this.$el);
       //this.$el.html(this.template(this.model.toJSON()));
     },
 

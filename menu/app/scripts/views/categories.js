@@ -8,7 +8,7 @@ Menu.Views = Menu.Views || {};
   Menu.Views.Categories = Backbone.View.extend({
     //el:'.categories',
     tagName:'div',
-    classNane:'row categories',
+    className:'row categories',
 
     template: JST['app/scripts/templates/categories.ejs'],
 
@@ -35,7 +35,7 @@ Menu.Views = Menu.Views || {};
     },
 
     render: function () {
-      $('.page-header').append(this.$el);
+      $('.right-block').append(this.$el);
       //this.$el.html(this.template(this.model.toJSON()));
     },
 

@@ -100,14 +100,18 @@ body {
 }
 
 .popup {
-  position: fixed;
-  z-index: 10;
-  top: 50%;
-  left: 50%;
-  height: 60vh;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: calc(30vw + 130px);
+  min-height: 280px;
+  max-height: 380px;
   width: 30vw;
-  margin-top: -30vh;
-  margin-left: -15vw;
+  max-width: 250px;
+  min-width: 150px;
+  margin-top: -50px;
+  margin-left: -100px;
   opacity:1;
   background:white;
 }
@@ -150,4 +154,18 @@ main {
 
 .text-bold {
   font-weight: bold;
+}
+
+.dish .price, .popup .price {
+  padding-top: 9px;
+}
+
+.right-block {
+  padding:25px;
+}
+
+@media screen and (max-width: 760px) {
+.popup {
+  margin-left:0;
+}
 }
