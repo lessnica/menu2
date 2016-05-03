@@ -39,7 +39,9 @@ this.render();
       this.collection.remove();
       Backbone.trigger('dishViewDelete');
       this.remove(); // this.$el.remove();
-    }
+    },
+
+    detailedDish: false
 
 
   });

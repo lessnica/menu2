@@ -17,11 +17,12 @@ Menu.Views = Menu.Views || {};
 
     events: {
       'click .dish':'dishDetail',
-      'click .popup':'dishDetailHide'
+      'click .close':'dishDetailHide'
     },
 
     initialize: function () {
       this.listenTo(Backbone,'dishViewDelete',this.onDelete);
+      this.listenTo(Backbone,'popup',this.popupVar);
 
 
       this.render();
@@ -48,13 +49,21 @@ Menu.Views = Menu.Views || {};
     },
 
     dishDetail: function() {
+      if(this.switcher) return;
       this.$el.parent().find('.dish').addClass('halfopacity');
       this.$el.find('.popup').removeClass('hide');
+      Backbone.trigger('popup',1);
     },
 
     dishDetailHide: function() {
       this.$el.parent().find('.dish').removeClass('halfopacity');
       this.$el.find('.popup').addClass('hide');
+      Backbone.trigger('popup',0);
+    },
+
+    popupVar:function(switcher){
+      console.log(this.switcher);
+      this.switcher = switcher;
     },
 
 
