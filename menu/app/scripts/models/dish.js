@@ -13,9 +13,11 @@ Menu.Models = Menu.Models || {};
     },
 
     defaults: {
+      dishId:'',
       img:'',
       name:'Unknown',
-      description: ''
+      description: '',
+      price:0
     },
 
     validate: function(attrs, options) {

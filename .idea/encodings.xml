@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/menu/app/scripts/Salad.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/categories.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/models/dish.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/routes/categories.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/categoryitem.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/dishitem.ejs" charset="UTF-8" />

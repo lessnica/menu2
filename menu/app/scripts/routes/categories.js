@@ -19,6 +19,7 @@ Menu.Routers = Menu.Routers || {};
       if (this.view) {this.view.onDelete();}
 
       this.view = new Menu.Views.Categories();
+      this.basketView = new  Menu.Views.Basket();
 
     },
 

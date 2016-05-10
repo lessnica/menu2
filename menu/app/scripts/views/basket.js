@@ -9,7 +9,7 @@ Menu.Views = Menu.Views || {};
 
     template: JST['app/scripts/templates/basket.ejs'],
 
-    tagName: 'div',
+    el: 'ul.basket',
 
     id: '',
 
@@ -18,11 +18,23 @@ Menu.Views = Menu.Views || {};
     events: {},
 
     initialize: function () {
-      this.listenTo(this.model, 'change', this.render);
+      this.collection = new Menu.Collections.Basket();
+      this.listenTo(Backbone, 'dishAdded', this.addItem);
+      //this.listenTo(this.model, 'change', this.render);
     },
 
     render: function () {
-      this.$el.html(this.template(this.model.toJSON()));
+      //this.$el.html(this.template(this.model.toJSON()));
+    },
+
+    addItem : function(dishModel) {
+      this.collection.add({
+        dishId:dishModel.get('dishId'),
+        name:dishModel.get('name'),
+        quantity:1,
+        price:dishModel.get('price')
+      });
+      this.view = new Menu.Views.BasketItemView({model: this.collection.at(this.collection.length - 1)});
     }
 
   });

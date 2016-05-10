@@ -7,6 +7,10 @@ Menu.Collections = Menu.Collections || {};
 
   Menu.Collections.Basket = Backbone.Collection.extend({
 
+initialize:function(){
+
+},
+
     model: Menu.Models.Basket
 
   });

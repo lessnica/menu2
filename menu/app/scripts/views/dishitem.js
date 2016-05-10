@@ -65,8 +65,8 @@ Menu.Views = Menu.Views || {};
     },
 
     dishAdd: function() {
-      console.log(this.model.get('dishId'));
-      Backbone.trigger('dishAdded', this.model.get('dishId'));
+      console.log(this.model);
+      Backbone.trigger('dishAdded', this.model);
       this.dishDetailHide();
     },
 
