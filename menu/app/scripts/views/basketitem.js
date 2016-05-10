@@ -12,6 +12,9 @@ Menu.Views = Menu.Views || {};
     className: 'row list-group-item text-center',
 
     events: {
+      'click .minus':'minusButton',
+      'click .plus':'plusButton',
+      'click .delete':'deleteButton'
 
     },
 
@@ -30,7 +33,20 @@ Menu.Views = Menu.Views || {};
         price: '.price-basket-item'
       };
       this.modelBinder.bind(this.model, this.el, bindings);
+    },
+
+    minusButton: function() {
+      this.model.set('quantity',Math.max(this.model.get('quantity')-1,1));
+    },
+
+    plusButton: function() {
+      this.model.set('quantity',Math.min(this.model.get('quantity')+1,20));
+    },
+
+    deleteButton: function() {
+        this.remove();
     }
+
   });
 
 })();
