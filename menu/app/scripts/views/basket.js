@@ -18,13 +18,15 @@ Menu.Views = Menu.Views || {};
     events: {},
 
     initialize: function () {
-      this.collection = new Menu.Collections.Basket();
+      this.collection = new Menu.Collections.Basket(JSON.parse(localStorage.getItem('basketList')));
       this.listenTo(Backbone, 'dishAdded', this.addItem);
-      //this.listenTo(this.model, 'change', this.render);
+      this.render();
     },
 
     render: function () {
-      //this.$el.html(this.template(this.model.toJSON()));
+      this.collection.each(function(item) {
+        this.view = new Menu.Views.BasketItemView({model:item});
+      },this);
     },
 
     addItem : function(dishModel) {
@@ -35,6 +37,7 @@ Menu.Views = Menu.Views || {};
         price:dishModel.get('price')
       });
       this.view = new Menu.Views.BasketItemView({model: this.collection.at(this.collection.length - 1)});
+      localStorage.setItem('basketList', JSON.stringify(this.collection));
     }
 
   });

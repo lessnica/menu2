@@ -65,7 +65,7 @@ Menu.Views = Menu.Views || {};
     },
 
     dishAdd: function() {
-      console.log(this.model);
+      if(this.switcher && !$(event.target).parent().parent().hasClass('popup')) return;
       Backbone.trigger('dishAdded', this.model);
       this.dishDetailHide();
     },

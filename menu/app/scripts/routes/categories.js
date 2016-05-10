@@ -19,14 +19,16 @@ Menu.Routers = Menu.Routers || {};
       if (this.view) {this.view.onDelete();}
 
       this.view = new Menu.Views.Categories();
+      if (this.basketView) return;
       this.basketView = new  Menu.Views.Basket();
 
     },
 
     dishView:function(category){
       if (this.view) {this.view.onDelete();}
-
       this.view = new Menu.Views.Dish(category);
+      if (this.basketView) return;
+      this.basketView = new  Menu.Views.Basket();
     },
 
     dishViewNavigate: function(urltag,json) {
