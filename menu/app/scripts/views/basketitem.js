@@ -36,15 +36,19 @@ Menu.Views = Menu.Views || {};
     },
 
     minusButton: function() {
-      this.model.set('quantity',Math.max(this.model.get('quantity')-1,1));
+      this.model.set('quantity', Math.max(this.model.get('quantity')-1,1));
     },
 
     plusButton: function() {
-      this.model.set('quantity',Math.min(this.model.get('quantity')+1,20));
+      this.model.set('quantity', Math.min(this.model.get('quantity')+1,20));
     },
 
     deleteButton: function() {
+
+
+      this.model.collection.remove(this.model.cid);
         this.remove();
+
     }
 
   });

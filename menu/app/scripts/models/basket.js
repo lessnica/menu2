@@ -10,6 +10,7 @@ Menu.Models = Menu.Models || {};
     url: '',
 
     initialize: function() {
+
     },
 
     defaults: {
@@ -25,6 +26,9 @@ Menu.Models = Menu.Models || {};
     parse: function(response, options)  {
       return response;
     }
+
+
+
   });
 
 })();

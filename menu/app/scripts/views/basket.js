@@ -20,7 +20,7 @@ Menu.Views = Menu.Views || {};
     initialize: function () {
       this.collection = new Menu.Collections.Basket(JSON.parse(localStorage.getItem('basketList')));
       this.listenTo(Backbone, 'dishAdded', this.addItem);
-      this.render();
+        this.render();
     },
 
     render: function () {
@@ -37,7 +37,7 @@ Menu.Views = Menu.Views || {};
         price:dishModel.get('price')
       });
       this.view = new Menu.Views.BasketItemView({model: this.collection.at(this.collection.length - 1)});
-      localStorage.setItem('basketList', JSON.stringify(this.collection));
+
     }
 
   });
