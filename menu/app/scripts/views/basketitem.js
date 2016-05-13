@@ -30,7 +30,7 @@ Menu.Views = Menu.Views || {};
       var bindings = {
         name: '.order-name',
         quantity: '.amount',
-        price: '.price-basket-item'
+        totalPriceItem: '.price-basket-item'
       };
       this.modelBinder.bind(this.model, this.el, bindings);
     },
