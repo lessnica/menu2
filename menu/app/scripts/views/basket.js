@@ -19,8 +19,9 @@ Menu.Views = Menu.Views || {};
 
     initialize: function () {
       this.collection = new Menu.Collections.Basket(JSON.parse(localStorage.getItem('basketList')));
-      this.listenTo(Backbone, 'dishAdded', this.addItem);
+      //this.listenTo(Backbone, 'dishAdded', this.addItem);
         this.render();
+      this.listenTo(this.collection, 'add', this.addItemView);
     },
 
     render: function () {
@@ -29,7 +30,11 @@ Menu.Views = Menu.Views || {};
       },this);
     },
 
-    addItem : function(dishModel) {
+    addItemView: function () {
+      this.view = new Menu.Views.BasketItemView({model: this.collection.at(this.collection.length - 1)});
+    }
+
+    /*addItem : function(dishModel) {
       this.collection.add({
         dishId:dishModel.get('dishId'),
         name:dishModel.get('name'),
@@ -38,7 +43,7 @@ Menu.Views = Menu.Views || {};
       });
       this.view = new Menu.Views.BasketItemView({model: this.collection.at(this.collection.length - 1)});
 
-    }
+    }*/
 
   });
 
