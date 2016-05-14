@@ -1,10 +1,10 @@
 /*global beforeEach, describe, it, assert, expect  */
 'use strict';
 
-describe('Busket Collection', function () {
+describe('Basket Model', function () {
 
     beforeEach(function () {
-        this.BusketCollection = new Menu.Collections.Busket();
+        this.BasketModel = new Menu.Models.Basket();
     });
 
 });

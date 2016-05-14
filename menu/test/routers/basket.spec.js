@@ -1,10 +1,10 @@
 /*global beforeEach, describe, it, assert, expect  */
 'use strict';
 
-describe('Busket Router', function () {
+describe('Basket Router', function () {
 
     beforeEach(function () {
-        this.BusketRouter = new Menu.Routers.Busket();
+        this.BasketRouter = new Menu.Routers.Basket();
     });
 
     it('index route', function(){
