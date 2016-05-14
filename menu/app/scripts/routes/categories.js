@@ -16,6 +16,7 @@ Menu.Routers = Menu.Routers || {};
     },
 
     menuDefault: function() {
+      if (!this.appView) this.appView = new  Menu.Views.App();
       if (this.view) {this.view.onDelete();}
 
       this.view = new Menu.Views.Categories();
@@ -25,6 +26,7 @@ Menu.Routers = Menu.Routers || {};
     },
 
     dishView:function(category){
+      if (!this.appView) this.appView = new  Menu.Views.App();
       if (this.view) {this.view.onDelete();}
       this.view = new Menu.Views.Dish(category);
       if (this.basketView) return;
