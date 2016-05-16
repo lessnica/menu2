@@ -33,6 +33,7 @@ initialize:function(){
         basketItemTwin[0].set('quantity', Math.min(20, basketItemTwin[0].get('quantity') + 1));
       }
     }
+
   });
 
 })();
