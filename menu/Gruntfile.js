@@ -138,7 +138,7 @@ module.exports = function (grunt) {
     },
     sass: {
       options: {
-        sourcemap: true,
+        sourcemap: true
         /*includePaths: ['app/bower_components']*/
 
 
@@ -315,7 +315,7 @@ module.exports = function (grunt) {
     }
 
     if (target === 'test') {
-      return grunt.tsk.run ([
+      return grunt.task.run ([
         'clean:dist',
         'createDefaultTemplate',
         'jst',

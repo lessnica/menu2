@@ -19,6 +19,7 @@ Menu.Views = Menu.Views || {};
 
     initialize: function () {
       this.collection = new Menu.Collections.Basket(JSON.parse(localStorage.getItem('basketList')));
+      Backbone.trigger('collectionBasketCreated', this.collection);
       //this.listenTo(Backbone, 'dishAdded', this.addItem);
         this.render();
       this.listenTo(this.collection, 'add', this.addItemView);

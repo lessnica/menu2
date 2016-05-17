@@ -12,12 +12,14 @@ initialize:function(){
   this.on('remove',this.localStorageSave, this);
   this.on('change',this.localStorageSave, this);
   this.on('add',this.localStorageSave, this);
+  //Backbone.trigger('collectionBasketCreated', this);
 },
 
     model: Menu.Models.Basket,
 
     localStorageSave: function() {
       localStorage.setItem('basketList', JSON.stringify(this));
+      Backbone.trigger('collectionBasketChanged', this);
     },
 
     addItem: function(dishModel) {

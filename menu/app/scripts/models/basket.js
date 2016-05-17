@@ -31,6 +31,7 @@ Menu.Models = Menu.Models || {};
 
     countPrice: function() {
       this.set('totalPriceItem', (this.get('price') * this.get('quantity')).toFixed(2));
+      //console.log(this.get('totalPriceItem'));
     }
 
   });

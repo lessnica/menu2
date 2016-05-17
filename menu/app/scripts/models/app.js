@@ -10,8 +10,11 @@ Menu.Models = Menu.Models || {};
     url: '',
 
     initialize: function() {
-
+      this.listenTo(Backbone, 'collectionBasketChanged', this.countSum);
+      this.listenTo(Backbone, 'collectionBasketCreated', this.countSum);
     },
+
+
 
     defaults: {
      totalPrice:0,
@@ -23,9 +26,15 @@ Menu.Models = Menu.Models || {};
 
     parse: function(response, options)  {
       return response;
+    },
+
+    countSum: function(collection) {
+      var sum = 0;
+      collection.each(function(item) {
+        sum += parseFloat(item.get('totalPriceItem'));
+      });
+      this.set('totalPrice', (sum).toFixed(2));
     }
-
-
 
   });
 
