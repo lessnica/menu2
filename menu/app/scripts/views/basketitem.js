@@ -19,6 +19,7 @@ Menu.Views = Menu.Views || {};
     },
 
     initialize: function () {
+      this.listenTo(Backbone,'newOrder', this.deleteButton);
       this.render();
     },
 
