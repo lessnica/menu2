@@ -7,7 +7,7 @@ Menu.Models = Menu.Models || {};
 
   Menu.Models.App = Backbone.Model.extend({
 
-    url: '',
+    url: 'orders.json',
 
     initialize: function() {
       this.listenTo(Backbone, 'collectionBasketChanged', this.countSum);
@@ -29,6 +29,9 @@ Menu.Models = Menu.Models || {};
     },
 
     countSum: function(collection) {
+      this.set('collection', collection);
+
+      //can use reduce method
       var sum = 0;
       collection.each(function(item) {
         sum += parseFloat(item.get('totalPriceItem'));

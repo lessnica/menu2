@@ -38,7 +38,8 @@ Menu.Views = Menu.Views || {};
     },
 
     confirmOrder: function() {
-      Backbone.trigger('confirmOrder');
+      //Backbone.trigger('confirmOrder');
+      this.model.save();
     }
 
 

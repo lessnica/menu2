@@ -9,9 +9,7 @@ Menu.Collections = Menu.Collections || {};
 
 initialize:function(){
   this.listenTo(Backbone, 'dishAdded', this.addItem);
-  this.on('remove',this.localStorageSave, this);
-  this.on('change',this.localStorageSave, this);
-  this.on('add',this.localStorageSave, this);
+  this.on('remove change add',this.localStorageSave, this);
   //Backbone.trigger('collectionBasketCreated', this);
 },
 

@@ -1,1 +1,12 @@
-[{"img":"/images/salads.jpg", "name":"Salad", "file":"salads.json"}, {"img":"/images/soups.jpg", "name":"Soup", "file":"Soups.json"}]
+[
+  {
+    "img": "/images/salads.jpg",
+    "name": "Salad",
+    "file": "salads.json"
+  },
+  {
+    "img": "/images/soups.jpg",
+    "name": "Soup",
+    "file": "Soups.json"
+  }
+]
