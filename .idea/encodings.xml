@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/menu/Gruntfile.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/Salad.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/categories.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/collections/basket.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/models/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/models/dish.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/routes/categories.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/app.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/basketitem.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/categoryitem.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/dishitem.ejs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/views/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/basketitem.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/categories.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/categoryitem.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/dish.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/dishitem.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/styles/main.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/test/routers/categories.spec.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/test/spec/test.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/test/views/basket.spec.js" charset="UTF-8" />
   </component>
 </project>

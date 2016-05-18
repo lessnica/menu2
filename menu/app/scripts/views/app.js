@@ -16,8 +16,8 @@ Menu.Views = Menu.Views || {};
     className: '',
 
     events: {
-      'click .btn-new-order':'newOrder',
-      'click .btn-order-confirm': 'confirmOrder'
+      'click .btn-popup-new-order-yes':'newOrder',
+      'click .btn-popup-save-order-yes': 'confirmOrder'
     },
 
     initialize: function () {
@@ -26,6 +26,7 @@ Menu.Views = Menu.Views || {};
     },
 
     render: function () {
+      this.$el.append(this.template());
       this.modelBinder = new Backbone.ModelBinder();
       var bindings = {
         totalPrice: '.total-price'
