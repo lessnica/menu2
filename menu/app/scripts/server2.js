@@ -91,6 +91,7 @@ http.createServer(function(req,res) {
       });
       req.on('end', function() {
         fs.writeFile(req.url.replace('/', ''), JSON.stringify(jsonString), function() {
+          console.log(jsonString);
           res.end();
           //jsonString = [];
         });
