@@ -1,3 +1,5 @@
+/*Basket item view renders and listen to 1 order item (<li>)*/
+
 Menu.Views = Menu.Views || {};
 
 (function () {
@@ -45,8 +47,6 @@ Menu.Views = Menu.Views || {};
     },
 
     deleteButton: function() {
-
-
       this.model.collection.remove(this.model.cid);
         this.remove();
 

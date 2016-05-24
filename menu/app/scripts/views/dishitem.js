@@ -1,5 +1,5 @@
 /*global Menu, Backbone, JST*/
-
+/*renders view and popup for 1 dish*/
 Menu.Views = Menu.Views || {};
 
 (function () {
@@ -22,8 +22,6 @@ Menu.Views = Menu.Views || {};
     initialize: function () {
       this.listenTo(Backbone,'dishViewDelete',this.onDelete);
       this.listenTo(Backbone,'popup',this.popupVar);
-
-
       this.render();
 
     },
@@ -44,7 +42,6 @@ Menu.Views = Menu.Views || {};
     };
       this.modelBinder.bind(this.model,this.el,bindings);
 
-     //$('body').append(this.$el.html(this.template()).find('.image').attr('src',this.model.get('img')));
     },
 
     dishDetail: function() {

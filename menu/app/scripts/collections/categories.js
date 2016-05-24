@@ -1,4 +1,5 @@
 /*global Menu, Backbone*/
+/*Categories collection contains all cards of categories*/
 
 Menu.Collections = Menu.Collections || {};
 

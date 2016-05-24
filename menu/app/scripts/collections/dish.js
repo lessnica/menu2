@@ -1,5 +1,5 @@
 /*global Menu, Backbone*/
-
+/*Dish collection contains all cards of different dishes*/
 Menu.Collections = Menu.Collections || {};
 
 (function () {

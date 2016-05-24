@@ -16,8 +16,7 @@ http.createServer(function(req,res) {
       console.log('json request');
       res.writeHead(200,{'Content-type':'application/json'});
       fs.readFile(req.url.replace('/',''), function(err,data) {
-        console.log(req.url.replace('/',''), data);
-        res.end(data);
+          res.end(data);
       });
     }
 
@@ -25,8 +24,7 @@ http.createServer(function(req,res) {
     if (req.url.includes('css')) {
       res.writeHead(200, { 'Content-Type': 'text/css' });
       fs.readFile('../../dist'+req.url, function (err, data) {
-        console.log(req.url);
-        res.end(data);
+       res.end(data);
       });
     };
 
@@ -39,20 +37,21 @@ http.createServer(function(req,res) {
 
     if (req.url.includes('favicon')) {
       res.writeHead(200, { 'Content-Type': 'image/x-icon' });
-      res.end();
-    };
-
-    if (req.url.includes('.jpg')) {
-      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
-      fs.readFile(req.url.replace('/', ''), function (err, data) {
+      fs.readFile('../../dist'+req.url, function (err, data) {
         res.end(data);
       });
     };
 
-    if (req.url.includes('/fetch')) {
-      console.log(fetch);
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      fs.readFile('todolist.json', function (err, data) {
+    if (req.url.includes('.jpg')) {
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      fs.readFile('../'+req.url.replace('/', ''), function (err, data) {
+        res.end(data);
+      });
+    };
+
+    if (req.url.includes('.woff2')) {
+      res.writeHead(200, { 'Content-Type': 'application/font-woff' });
+      fs.readFile('../../dist'+req.url, function (err, data) {
         res.end(data);
       });
     }
@@ -61,15 +60,26 @@ http.createServer(function(req,res) {
   }
 
   if (req.method === 'POST') {
-    var jasonString = '';
-    req.on('data',function(data) {
-      jasonString +=data;
-    });
-    req.on('end', function() {
-      fs.writeFile('todolist.json',jasonString, function() {
-        res.end();
+    if (req.url.includes('.json')) {
+      var jsonString = [];
+      req.on('data', function(data) {
+
+        if((fs.readFileSync(req.url.replace('/',''), {encoding:'utf8'}))) {
+          var db = JSON.parse((fs.readFileSync(req.url.replace('/',''), {encoding: 'utf8'})));
+          db.forEach(function(item){
+            jsonString.push(item);
+          });
+        }
+        jsonString.push((JSON.parse(data.toString())));
       });
-    });
+      req.on('end', function() {
+        fs.writeFile(req.url.replace('/', ''), JSON.stringify(jsonString), function() {
+                  res.end();
+
+        });
+      });
+
+    }
   }
 
 

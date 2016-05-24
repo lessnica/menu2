@@ -1,5 +1,5 @@
 /*global Menu, Backbone*/
-
+/*App model is responsible for storage of all order information and total price calculation*/
 Menu.Models = Menu.Models || {};
 
 (function () {
@@ -19,13 +19,6 @@ Menu.Models = Menu.Models || {};
     defaults: {
      totalPrice:0,
       collection:[]
-    },
-
-    validate: function(attrs, options) {
-    },
-
-    parse: function(response, options)  {
-      return response;
     },
 
     countSum: function(collection) {

@@ -5,10 +5,7 @@
     <title>Menu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-
 
     <!-- endbuild -->
   </head>
@@ -41,11 +38,11 @@
         </div>
       </div>
     </header>
+
     <main>
       <section class="container-fluid">
         <div class="row">
           <div class="col-sm-5 col-md-3 left-block clearfix">
-
               <h4>Items in Your basket:</h4>
             <ul class="basket list-group container-fluid">
               <li class="row list-group-item text-center text-bold">
@@ -53,48 +50,23 @@
                 <div class="amount col-xs-3 col-sm-3 col-md-3">Amount</div>
                 <div class="price col-xs-3 col-sm-3 col-md-3">Price</div>
               </li>
-              <!--<li class="row list-group-item text-center">
-                <div class="order-name col-xs-5 col-sm-5 col-md-5 text-left">Order 1 veryLongWordInOn secondLongWord and somethingElse</div>
-                <div class="col-xs-1 col-sm-1 col-md-1"><button class="">-</button></div>
-                <div class="amount col-xs-1 col-sm-1 col-md-1 ">1</div>
-                <div class="col-xs-1 col-sm-1 col-md-1 "><button class=''>+</button></div>
-                <div class="price col-xs-3 col-sm-3 col-md-3">160.00</div>
-                <div class="col-xs-1 col-sm-1 col-md-1"><button class=" delete btn-danger pull-right">X</button></div>
-              </li>
-              <li class="row list-group-item text-center">
-                <div class="order-name col-xs-5 col-sm-5 col-md-5 text-left">Order 1 veryLongWordInOneLine secondLongWord and somethingElse</div>
-                <div class="col-xs-1 col-sm-1 col-md-1"><button class="">-</button></div>
-                <div class="amount col-xs-1 col-sm-1 col-md-1">1</div>
-                <div class="col-xs-1 col-sm-1 col-md-1"><button class=''>+</button></div>
-                <div class="price col-xs-3 col-sm-3 col-md-3">160.00</div>
-                <div class="col-xs-1 col-sm-1 col-md-1"><button class=" delete btn-danger pull-right">X</button></div>
-              </li>-->
             </ul>
             <div class="container-fluid text-bold order-sum">
               <div class="col-xs-7 col-sm-7 col-md-7  text-right h4">Total price:</div>
               <div class="total-price col-xs-5 col-sm-5 col-md-5 text-right h4">0.00</div>
             </div>
-
             <button class="btn btn-success pull-right" data-toggle="modal" data-target="#saveOrder" data-backdrop="static">Confirm order <i class="glyphicon glyphicon-shopping-cart"></i></button>
-
           </div>
-          <!--<div>-->
-            <!--<button class="btn btn-danger pull-right" data-toggle="modal" data-target="#newOrder" data-backdrop="static">New order</button>-->
-          <!--</div>-->
           <div class="col-sm-7 col-md-9 text-center right-block">
             <div class = "clearfix">
               <button class="btn btn-danger pull-right" data-toggle="modal" data-target="#newOrder" data-backdrop="static">New order</button>
             </div>
             <h1 class="">Choose food You need:</h1>
-
-
-            <!--<div class="container categories">-->
-              <!--&lt;!&ndash;Categories View will be render here&ndash;&gt;-->
-            <!--</div>-->
           </div>
         </div>
       </section>
     </main>
+
     <footer class="panel-footer">
       <p class="">Made with using Bootstrap©</p>
       <p class="">© 2016 LesSer</p>
@@ -113,6 +85,7 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/backbone/Backbone.ModelBinder.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/plugins.js -->
@@ -128,27 +101,22 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+
     <!-- endbuild -->
-    <script src="bower_components/Backbone.ModelBinder.js"></script>
+
     <!-- build:js({.tmp,app}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/templates.js"></script>
-    <script src="scripts/routes/basket.js"></script>
-
     <script src="scripts/models/basket.js"></script>
     <script src="scripts/collections/basket.js"></script>
     <script src="scripts/views/basketitem.js"></script>
     <script src="scripts/views/basket.js"></script>
-
-
     <script src="scripts/views/categories.js"></script>
     <script src="scripts/models/categories.js"></script>
     <script src="scripts/collections/categories.js"></script>
     <script src="scripts/views/categoryitem.js"></script>
     <script src="scripts/views/categories.js"></script>
     <script src="scripts/routes/categories.js"></script>
-    <script src="scripts/routes/dish.js"></script>
-
     <script src="scripts/models/dish.js"></script>
     <script src="scripts/collections/dish.js"></script>
     <script src="scripts/views/dishitem.js"></script>

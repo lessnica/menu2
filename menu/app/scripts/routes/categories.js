@@ -1,5 +1,5 @@
 /*global Menu, Backbone*/
-
+/*Router switches different views*/
 Menu.Routers = Menu.Routers || {};
 
 (function () {

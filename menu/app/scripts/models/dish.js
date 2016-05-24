@@ -1,5 +1,5 @@
 /*global Menu, Backbone*/
-
+/*Dish model responsible for 1 dish*/
 Menu.Models = Menu.Models || {};
 
 (function () {
@@ -18,14 +18,8 @@ Menu.Models = Menu.Models || {};
       name:'Unknown',
       description: '',
       price:0
-    },
-
-    validate: function(attrs, options) {
-    },
-
-    parse: function(response, options)  {
-      return response;
     }
+
   });
 
 })();

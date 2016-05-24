@@ -275,6 +275,11 @@ module.exports = function (grunt) {
           //// flattens results to a single level
           //{expand: true, flatten: true, src: ['app/scripts/**'], dest: 'dist/', filter: 'isFile'},
         ]
+      },
+      binder: {
+        files: [
+          {expand: true, cwd: 'app/bower_components/', src: ['*Binder.js'], dest: 'dist/bower_components'},
+        ]
       }
     },
 
@@ -381,17 +386,18 @@ module.exports = function (grunt) {
 
     'createDefaultTemplate',
     'jst',
-    'copy:main',
+    //'copy:main',
     'sass:dist',
     'useminPrepare',
     'imagemin',
     'htmlmin',
     'concat',
     'cssmin',
-    //'uglify',
-    //'copy,
-    /*'rev',
-    'usemin'*/
+    'uglify',
+    'copy:dist',
+    //'copy:binder',
+    'rev',
+    'usemin'
   ]);
 
   grunt.registerTask('buildmin', [

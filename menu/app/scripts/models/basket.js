@@ -1,4 +1,5 @@
 /*global Menu, Backbone*/
+/*Basket model responsible for 1 item in the basket*/
 
 Menu.Models = Menu.Models || {};
 
@@ -22,17 +23,9 @@ Menu.Models = Menu.Models || {};
       totalPriceItem:0
     },
 
-    validate: function(attrs, options) {
-    },
-
-    parse: function(response, options)  {
-      return response;
-    },
-
     countPrice: function() {
       this.set('totalPriceItem', (this.get('price') * this.get('quantity')).toFixed(2));
-      //console.log(this.get('totalPriceItem'));
-    }
+      }
 
   });
 

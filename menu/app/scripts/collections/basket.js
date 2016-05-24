@@ -1,4 +1,5 @@
 /*global Menu, Backbone*/
+/*Basket collection contains all order items*/
 
 Menu.Collections = Menu.Collections || {};
 
@@ -10,8 +11,7 @@ Menu.Collections = Menu.Collections || {};
 initialize:function(){
   this.listenTo(Backbone, 'dishAdded', this.addItem);
   this.on('remove change add',this.localStorageSave, this);
-  //Backbone.trigger('collectionBasketCreated', this);
-},
+  },
 
     model: Menu.Models.Basket,
 

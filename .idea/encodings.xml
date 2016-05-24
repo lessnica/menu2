@@ -5,14 +5,21 @@
     <file url="file://$PROJECT_DIR$/menu/app/scripts/Salad.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/categories.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/collections/basket.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/collections/categories.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/models/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/models/categories.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/models/dish.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/orders.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/routes/categories.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/server.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/server2.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/app.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/basketitem.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/categoryitem.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/dishitem.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/scripts/views/basket.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/basketitem.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/categories.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/categoryitem.js" charset="UTF-8" />

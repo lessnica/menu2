@@ -1,5 +1,5 @@
 /*global Menu, Backbone, JST*/
-
+/*App view resposible for all DOM in particular general session buttons*/
 Menu.Views = Menu.Views || {};
 
 (function () {
@@ -39,7 +39,6 @@ Menu.Views = Menu.Views || {};
     },
 
     confirmOrder: function() {
-           //Backbone.trigger('confirmOrder');
       this.model.save();
     }
 

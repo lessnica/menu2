@@ -1,5 +1,5 @@
 /*global Menu, Backbone, JST*/
-
+/*renders 1 category card*/
 Menu.Views = Menu.Views || {};
 
 (function () {
@@ -18,7 +18,6 @@ Menu.Views = Menu.Views || {};
     },
 
     initialize: function () {
-      console.log('kkkkkkkk');
       this.listenTo(Backbone,'viewDelete',this.onDelete);
 
 
@@ -40,12 +39,10 @@ Menu.Views = Menu.Views || {};
       };
       this.modelBinder.bind(this.model,this.el,bindings);
 
-     //$('body').append(this.$el.html(this.template()).find('.image').attr('src',this.model.get('img')));
     },
 
     onCategory: function() {
-      console.log('clicked');
-      Backbone.trigger('categoryClicked', this.model.get('name'), this.model.get('json'));
+       Backbone.trigger('categoryClicked', this.model.get('name'), this.model.get('json'));
 
     },
 

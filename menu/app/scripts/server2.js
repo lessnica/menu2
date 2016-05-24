@@ -58,24 +58,9 @@ http.createServer(function(req,res) {
     });
   }
 
-/*    if (req.url.includes('/fetch')) {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      fs.readFile('todolist.json', function (err, data) {
-        res.end(data);
-      });
-    }*/
   }
 
   if (req.method === 'POST') {
-
-/*    req.on('data',function(data) {
-      jsonString +=data;
-    });
-    req.on('end', function() {
-      fs.writeFile('todolist.json',jsonString, function() {
-        res.end();
-      });
-    });*/
 
     if (req.url.includes('.json')) {
       var jsonString = [];

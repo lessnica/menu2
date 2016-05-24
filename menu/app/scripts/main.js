@@ -9,7 +9,6 @@ window.Menu = {
   init: function () {
     'use strict';
 
-    console.log('Hello from Backbone!');
     var router = new Menu.Routers.Categories();
     Backbone.history.start();
   }

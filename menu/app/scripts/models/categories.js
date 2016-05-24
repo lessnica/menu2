@@ -1,4 +1,5 @@
 /*global Menu, Backbone*/
+/*Categories model responsible for 1 category of products*/
 
 Menu.Models = Menu.Models || {};
 
@@ -16,13 +17,6 @@ Menu.Models = Menu.Models || {};
       img:'',
       name:'Unknown',
       file: 'unknown.json'
-    },
-
-    validate: function(attrs, options) {
-    },
-
-    parse: function(response, options)  {
-      return response;
     }
   });
 
