@@ -802,6 +802,7 @@ function Sizzle( selector, context, results, seed ) {
 
 			// Speed-up: Sizzle(".CLASS")
 			} else if ( (m = match[3]) && support.getElementsByClassName ) {
+
 				push.apply( results, context.getElementsByClassName( m ) );
 				return results;
 			}

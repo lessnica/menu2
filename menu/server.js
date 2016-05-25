@@ -3,19 +3,21 @@ var fs = require ('fs');
 
 http.createServer(function(req,res) {
   console.log('server created');
+  //fs.readFile('dist/index.html', function (err, data) {
+  //  res.end(data);
+  //});
   if (req.method === 'GET') {
 
     if (req.url.includes('html')) {
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      fs.readFile('../../dist/'+req.url, function (err, data) {
+      fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
     };
 
     if(req.url.includes('json')) {
-      console.log('json request');
-      res.writeHead(200,{'Content-type':'application/json'});
-      fs.readFile(req.url.replace('/',''), function(err,data) {
+        res.writeHead(200,{'Content-type':'application/json'});
+      fs.readFile('app/scripts/'+req.url.replace('/',''), function(err,data) {
           res.end(data);
       });
     }
@@ -23,35 +25,35 @@ http.createServer(function(req,res) {
 
     if (req.url.includes('css')) {
       res.writeHead(200, { 'Content-Type': 'text/css' });
-      fs.readFile('../../dist'+req.url, function (err, data) {
+      fs.readFile('dist'+req.url, function (err, data) {
        res.end(data);
       });
     };
 
     if (req.url.includes('js') && !req.url.includes('json')) {
       res.writeHead(200, { 'Content-Type': 'text/javascript' });
-      fs.readFile('../../dist'+req.url, function (err, data) {
+      fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
     };
 
     if (req.url.includes('favicon')) {
       res.writeHead(200, { 'Content-Type': 'image/x-icon' });
-      fs.readFile('../../dist'+req.url, function (err, data) {
+      fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
     };
 
     if (req.url.includes('.jpg')) {
       res.writeHead(200, { 'Content-Type': 'image/jpeg' });
-      fs.readFile('../'+req.url.replace('/', ''), function (err, data) {
+      fs.readFile('app/'+req.url, function (err, data) {
         res.end(data);
       });
     };
 
     if (req.url.includes('.woff2')) {
       res.writeHead(200, { 'Content-Type': 'application/font-woff' });
-      fs.readFile('../../dist'+req.url, function (err, data) {
+      fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
     }
@@ -73,7 +75,7 @@ http.createServer(function(req,res) {
         jsonString.push((JSON.parse(data.toString())));
       });
       req.on('end', function() {
-        fs.writeFile(req.url.replace('/', ''), JSON.stringify(jsonString), function() {
+        fs.writeFile('app/scripts/'+req.url.replace('/', ''), JSON.stringify(jsonString), function() {
                   res.end();
 
         });

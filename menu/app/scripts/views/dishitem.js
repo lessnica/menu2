@@ -44,7 +44,7 @@ Menu.Views = Menu.Views || {};
 
     },
 
-    dishDetail: function() {
+    dishDetail: function(event) {
       if(this.switcher || $(event.target).hasClass('btn-add')) return;
       this.$el.parent().find('.dish').addClass('halfopacity');
       this.$el.find('.popup').removeClass('hide');
@@ -61,7 +61,7 @@ Menu.Views = Menu.Views || {};
       this.switcher = switcher;
     },
 
-    dishAdd: function() {
+    dishAdd: function(event) {
       if(this.switcher && !$(event.target).parent().parent().hasClass('popup')) return;
       Backbone.trigger('dishAdded', this.model);
       this.dishDetailHide();

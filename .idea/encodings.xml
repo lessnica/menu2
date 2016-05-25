@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/menu/Gruntfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/app/bower_components/jquery/dist/jquery.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/Salad.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/categories.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/collections/basket.js" charset="UTF-8" />
@@ -12,7 +13,6 @@
     <file url="file://$PROJECT_DIR$/menu/app/scripts/models/dish.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/orders.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/routes/categories.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/menu/app/scripts/server.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/server2.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/app.ejs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/templates/basketitem.ejs" charset="UTF-8" />
@@ -26,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/dish.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/scripts/views/dishitem.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/app/styles/main.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/menu/server.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/test/routers/categories.spec.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/test/spec/test.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/menu/test/views/basket.spec.js" charset="UTF-8" />
