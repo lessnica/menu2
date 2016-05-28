@@ -15,6 +15,13 @@ http.createServer(function(req,res) {
       });
     };
 
+    if (req.url.includes('.com')) {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      fs.readFile('dist'+req.url, function (err, data) {
+        res.end(data);
+      });
+    };
+
     if(req.url.includes('json')) {
         res.writeHead(200,{'Content-type':'application/json'});
       fs.readFile('app/scripts/'+req.url.replace('/',''), function(err,data) {
