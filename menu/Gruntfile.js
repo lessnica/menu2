@@ -252,7 +252,7 @@ module.exports = function (grunt) {
           //// makes all src relative to cwd
           {expand: true, cwd: 'app/scripts/', src: ['**'], dest: 'dist/scripts'},
           {expand: true, cwd: 'app/bower_components/', src: ['**'], dest: 'dist/bower_components'},
-          {expand: true, cwd: '.tmp/scripts/', src: ['*.js'], dest: 'dist/scripts'},
+          {expand: true, cwd: '.tmp/scripts/', src: ['*.js'], dest: 'dist/scripts'}
           //
           //// flattens results to a single level
           //{expand: true, flatten: true, src: ['app/scripts/**'], dest: 'dist/', filter: 'isFile'},
@@ -270,7 +270,7 @@ module.exports = function (grunt) {
 
 
           {expand: true, cwd: '.tmp/scripts/', src: ['*.js'], dest: 'app/scripts'},
-          {expand: true, cwd: '.tmp/styles/', src: ['*.css'], dest: 'app/styles'},
+          {expand: true, cwd: '.tmp/styles/', src: ['*.css'], dest: 'app/styles'}
           //
           //// flattens results to a single level
           //{expand: true, flatten: true, src: ['app/scripts/**'], dest: 'dist/', filter: 'isFile'},
@@ -278,7 +278,7 @@ module.exports = function (grunt) {
       },
       binder: {
         files: [
-          {expand: true, cwd: 'app/bower_components/', src: ['*Binder.js'], dest: 'dist/bower_components'},
+          {expand: true, cwd: 'app/bower_components/', src: ['*Binder.js'], dest: 'dist/bower_components'}
         ]
       }
     },
@@ -339,7 +339,7 @@ module.exports = function (grunt) {
         'open:test',
         'watch'
       ]);
-      return grunt.task.run([
+/*      return grunt.task.run([
         'clean:server',
         'createDefaultTemplate',
         'jst',
@@ -347,7 +347,7 @@ module.exports = function (grunt) {
         'connect:test',
         'open:test',
         'watch'
-      ]);
+      ]);*/
     }
 
     grunt.task.run([
@@ -389,7 +389,7 @@ module.exports = function (grunt) {
     //'copy:main',
     'sass:dist',
     'useminPrepare',
-    'imagemin',
+    //'imagemin',
     'htmlmin',
     'concat',
     'cssmin',

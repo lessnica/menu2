@@ -15,8 +15,8 @@ Menu.Models = Menu.Models || {};
 
     defaults: {
       img:'',
-      name:'Unknown',
-      file: 'unknown.json'
+      name:'Unknown'
+      //file: 'unknown.json'
     }
   });
 

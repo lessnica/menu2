@@ -114,6 +114,7 @@ body {
   margin-left: -100px;
   opacity:1;
   background:#f5f5f5;
+  border-radius: 4px;
 }
 .popup img {
   margin:0 auto;
@@ -171,6 +172,10 @@ main {
   }
 }
 
+.image:hover, .categories > .categoryName:hover, .dish > .dishName:hover {
+  cursor: pointer;
+}
+
 .image, .popup .image {
   margin-bottom: 2px;
 }
@@ -181,4 +186,8 @@ main {
 
 .left-block {
   margin-bottom:20px;
+}
+
+.categoryName {
+  text-transform: capitalize;
 }

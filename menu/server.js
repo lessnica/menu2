@@ -6,21 +6,31 @@ http.createServer(function(req,res) {
   //fs.readFile('dist/index.html', function (err, data) {
   //  res.end(data);
   //});
-  if (req.method === 'GET') {
+
+    if (req.method === 'GET') {
+
+
+
+      //if (!req.url.includes('html') && !req.url.includes('json') && !req.url.includes('.js') && !req.url.includes('jpg') && !req.url.includes('css') && !req.url.includes('woff2')) {
+      //  res.writeHead(200, { 'Content-Type': 'text/html' });
+      //  fs.readFile('dist/index.html', function (err, data) {
+      //    res.end(data);
+      //  });
+      //}
 
     if (req.url.includes('html')) {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
 
-    if (req.url.includes('.com')) {
+    if (req.url == '/') {
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      fs.readFile('dist'+req.url, function (err, data) {
+      fs.readFile('dist/index.html', function (err, data) {
         res.end(data);
       });
-    };
+    }
 
     if(req.url.includes('json')) {
         res.writeHead(200,{'Content-type':'application/json'});
@@ -35,28 +45,28 @@ http.createServer(function(req,res) {
       fs.readFile('dist'+req.url, function (err, data) {
        res.end(data);
       });
-    };
+    }
 
     if (req.url.includes('js') && !req.url.includes('json')) {
       res.writeHead(200, { 'Content-Type': 'text/javascript' });
       fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
 
     if (req.url.includes('favicon')) {
       res.writeHead(200, { 'Content-Type': 'image/x-icon' });
       fs.readFile('dist'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
 
     if (req.url.includes('.jpg')) {
       res.writeHead(200, { 'Content-Type': 'image/jpeg' });
       fs.readFile('app/'+req.url, function (err, data) {
         res.end(data);
       });
-    };
+    }
 
     if (req.url.includes('.woff2')) {
       res.writeHead(200, { 'Content-Type': 'application/font-woff' });
@@ -92,6 +102,6 @@ http.createServer(function(req,res) {
   }
 
 
-}).listen(8080);
+}).listen(process.env.PORT || 3000);
 
-console.log('server running 8080');
+console.log('server running on port: 3000');
