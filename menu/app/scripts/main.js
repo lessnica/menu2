@@ -10,7 +10,7 @@ window.Menu = {
     'use strict';
 
     var router = new Menu.Routers.Categories();
-    Backbone.history.start();
+    Backbone.history.start({pushState: true, root: ""});
   }
 };
 

@@ -8,6 +8,7 @@ Menu.Routers = Menu.Routers || {};
   Menu.Routers.Categories = Backbone.Router.extend({
     initialize:function() {
       this.listenTo(Backbone,'categoryClicked',this.dishViewNavigate);
+      this.listenTo(Backbone,'indexPage',this.indexPageNavigate);
     },
 
     routes: {
@@ -35,7 +36,11 @@ Menu.Routers = Menu.Routers || {};
 
     dishViewNavigate: function(urltag,json) {
       this.navigate('category/'+urltag,{trigger:true});
-      this.categoryJson = json;
+      //this.categoryJson = json;
+
+    },
+    indexPageNavigate: function() {
+      this.navigate('/',{trigger:true});
 
     }
 

@@ -9,7 +9,7 @@ Menu.Views = Menu.Views || {};
 
     template: JST['app/scripts/templates/app.ejs'],
 
-    el: 'main',
+    el: 'body',
 
     id: '',
 
@@ -17,7 +17,8 @@ Menu.Views = Menu.Views || {};
 
     events: {
       'click .btn-popup-new-order-yes':'newOrder',
-      'click .btn-popup-save-order-yes': 'confirmOrder'
+      'click .btn-popup-save-order-yes': 'confirmOrder',
+      'click .navbar-brand': 'indexPage'
     },
 
     initialize: function () {
@@ -40,6 +41,11 @@ Menu.Views = Menu.Views || {};
 
     confirmOrder: function() {
       this.model.save();
+    },
+
+    indexPage: function(event) {
+      Backbone.trigger('indexPage');
+      event.preventDefault();
     }
 
 

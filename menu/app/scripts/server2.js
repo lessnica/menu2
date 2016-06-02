@@ -2,58 +2,70 @@ var http = require ('http');
 var fs = require ('fs');
 
 http.createServer(function(req,res) {
+  var minReqUrl;
+  if (req.url.includes('category')){
+    minReqUrl = req.url.replace('/category/','');
+  } else minReqUrl = req.url;
+
   console.log('server created');
   if (req.method === 'GET') {
 
-    if (req.url.includes('html')) {
+    if (req.url == '/' || !req.url.includes('.')) {
       res.writeHead(200, { 'Content-Type': 'text/html' });
-      fs.readFile('../'+req.url, function (err, data) {
+      fs.readFile('../index.html', function (err, data) {
         res.end(data);
       });
     }
 
-    if(req.url.includes('json')) {
+    if (minReqUrl.includes('html')) {
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      fs.readFile('../'+minReqUrl, function (err, data) {
+        res.end(data);
+      });
+    }
+
+    if(minReqUrl.includes('json')) {
       console.log('json request');
       res.writeHead(200,{'Content-type':'application/json'});
-      fs.readFile(req.url.replace('/',''), function(err,data) {
-        console.log(req.url.replace('/',''), data);
+      fs.readFile(minReqUrl.replace('/',''), function(err,data) {
+        console.log(req.url.replace('category/',''), data);
         res.end(data);
       });
     }
 
 
-    if (req.url.includes('css')) {
+    if (minReqUrl.includes('css')) {
       res.writeHead(200, { 'Content-Type': 'text/css' });
-      fs.readFile('../'+req.url, function (err, data) {
-        console.log(req.url);
+      fs.readFile('../'+minReqUrl, function (err, data) {
+        console.log(minReqUrl);
         res.end(data);
       });
     }
 
-    if (req.url.includes('js') && !req.url.includes('json')) {
+    if (minReqUrl.includes('js') && !minReqUrl.includes('json')) {
       res.writeHead(200, { 'Content-Type': 'text/javascript' });
-      fs.readFile('../'+req.url, function (err, data) {
+      fs.readFile('../'+minReqUrl, function (err, data) {
         res.end(data);
       });
     }
 
-    if (req.url.includes('favicon')) {
+    if (minReqUrl.includes('favicon')) {
       res.writeHead(200, { 'Content-Type': 'image/x-icon' });
-      fs.readFile('../'+req.url, function (err, data) {
+      fs.readFile('../'+minReqUrl, function (err, data) {
         res.end(data);
       });
     }
 
-    if (req.url.includes('.jpg')) {
+    if (minReqUrl.includes('.jpg')) {
       res.writeHead(200, { 'Content-Type': 'image/jpeg' });
-    fs.readFile('../'+req.url, function (err, data) {
+    fs.readFile('../'+minReqUrl, function (err, data) {
       res.end(data);
     });
   }
 
-    if (req.url.includes('.woff2')) {
+    if (minReqUrl.includes('.woff2')) {
       res.writeHead(200, { 'Content-Type': 'application/font-woff' });
-    fs.readFile('../'+req.url, function (err, data) {
+    fs.readFile('../'+minReqUrl, function (err, data) {
       res.end(data);
     });
   }
@@ -62,12 +74,12 @@ http.createServer(function(req,res) {
 
   if (req.method === 'POST') {
 
-    if (req.url.includes('.json')) {
+    if (minReqUrl.includes('.json')) {
       var jsonString = [];
       req.on('data', function(data) {
 
-        if((fs.readFileSync(req.url.replace('/',''), {encoding:'utf8'}))) {
-          var db = JSON.parse((fs.readFileSync(req.url.replace('/',''), {encoding: 'utf8'})));
+        if((fs.readFileSync(minReqUrl.replace('/',''), {encoding:'utf8'}))) {
+          var db = JSON.parse((fs.readFileSync(minReqUrl.replace('/',''), {encoding: 'utf8'})));
           db.forEach(function(item){
             jsonString.push(item);
           });
@@ -75,7 +87,7 @@ http.createServer(function(req,res) {
         jsonString.push((JSON.parse(data.toString())));
       });
       req.on('end', function() {
-        fs.writeFile(req.url.replace('/', ''), JSON.stringify(jsonString), function() {
+        fs.writeFile(minReqUrl.replace('/', ''), JSON.stringify(jsonString), function() {
           console.log(jsonString);
           res.end();
           //jsonString = [];
