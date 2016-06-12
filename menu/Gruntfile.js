@@ -389,7 +389,7 @@ module.exports = function (grunt) {
     //'copy:main',
     'sass:dist',
     'useminPrepare',
-    //'imagemin',
+    'imagemin',
     'htmlmin',
     'concat',
     'cssmin',

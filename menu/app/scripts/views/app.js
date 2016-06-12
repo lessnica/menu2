@@ -18,12 +18,15 @@ Menu.Views = Menu.Views || {};
     events: {
       'click .btn-popup-new-order-yes':'newOrder',
       'click .btn-popup-save-order-yes': 'confirmOrder',
-      'click .navbar-brand': 'indexPage'
+      'click .navbar-brand': 'indexPage',
+      'click .button-group':'filteredGrid'
     },
 
     initialize: function () {
       this.model = new Menu.Models.App();
       this.render();
+
+
     },
 
     render: function () {
@@ -46,6 +49,12 @@ Menu.Views = Menu.Views || {};
     indexPage: function(event) {
       Backbone.trigger('indexPage');
       event.preventDefault();
+    },
+
+
+
+    filteredGrid: function(event) {
+      Backbone.trigger('filteredDish', event.target);
     }
 
 

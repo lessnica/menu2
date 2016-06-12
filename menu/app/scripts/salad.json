@@ -4,41 +4,47 @@
     "img":"/images/greece.jpg",
     "name":"Greece",
     "description":"Tomato,cucumbers,feta,salad leaves, olive oil and bla bla bla bla bla bla",
-    "price":"75.00"
+    "price":"75.00",
+    "dataCategory":"vegetarian"
   },
   {
     "dishId":"1.2",
     "img":"/images/olivie.jpg",
     "name":"Olivie",
     "description":"meat,eggs, pees, carrot,cucumber",
-    "price":"76.00"
+    "price":"76.00",
+    "dataCategory":"non-vegetarian"
   },
   {
     "dishId":"1.3",
     "img":"/images/caesar.jpg",
     "name":"Caesar",
     "description":"Tomato,cucumbers,feta,salad leaves, olive oil and bla bla bla bla bla bla",
-    "price":"76.25"
+    "price":"76.25",
+    "dataCategory":"non-vegetarian"
   },
   {
     "dishId":"1.4",
     "img":"/images/vinaigrette.jpg",
     "name":"Vinaigrette",
     "description":"meat,eggs, pees, carrot,cucumber",
-    "price":"75.50"
+    "price":"75.50",
+    "dataCategory":"vegetarian"
   },
   {
     "dishId":"1.5",
     "img":"/images/mimosa.jpg",
     "name":"Mimosa",
     "description":"Tomato,cucumbers,feta,salad leaves, olive oil and bla bla bla bla bla bla",
-    "price":"77.00"
+    "price":"77.00",
+    "dataCategory":"non-vegetarian"
   },
   {
     "dishId":"1.6",
     "img":"/images/spring.jpg",
     "name":"Spring",
     "description":"meat,eggs, pees, carrot,cucumber",
-    "price":"50.00"
+    "price":"50.00",
+    "dataCategory":"vegetarian"
   }
 ]

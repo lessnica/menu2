@@ -4,27 +4,31 @@
     "img":"/images/chicken-bouillon.jpg",
     "name":"Chicken bouillon",
     "description":"Tomato,cucumbers,feta,salad leaves, olive oil and bla bla bla bla bla bla",
-    "price":"75.00"
+    "price":"75.00",
+    "dataCategory":"non-vegetarian"
   },
   {
     "dishId":"2.2",
     "img":"/images/borsch.jpg",
     "name":"Borsch",
     "description":"meat,eggs, pees, carrot,cucumber",
-    "price":"76.00"
+    "price":"76.00",
+    "dataCategory":"non-vegetarian"
   },
   {
     "dishId":"2.3",
     "img":"/images/mushroom-cream-soup.jpg",
     "name":"Mushroom cream-soup",
     "description":"Tomato,cucumbers,feta,salad leaves, olive oil and bla bla bla bla bla bla",
-    "price":"76.25"
+    "price":"76.25",
+    "dataCategory":"vegetarian"
   },
   {
     "dishId":"2.4",
     "img":"/images/spinach-cream-soup.jpg",
     "name":"Spinach cream-soup",
     "description":"meat,eggs, pees, carrot,cucumber",
-    "price":"75.50"
+    "price":"75.50",
+    "dataCategory":"vegetarian"
   }
 ]

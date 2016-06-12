@@ -157,6 +157,21 @@ main {
   font-weight: bold;
 }
 
+@keyframes dish-opacity {
+0% {
+  opacity: 0;
+}
+
+100% {
+   opacity: 1;
+}
+
+}
+
+.animated-cart {
+  animation: dish-opacity 1s;
+}
+
 .dish .price, .popup .price {
   padding-top: 9px;
 }
@@ -180,6 +195,10 @@ main {
   margin-bottom: 2px;
 }
 
+.price-add-line {
+  padding:0;
+}
+
 .popup-buttons {
   text-align:center;
 }
@@ -190,4 +209,31 @@ main {
 
 .categoryName {
   text-transform: capitalize;
+}
+
+.button-group button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+}
+
+.button-group .btn:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .btn:last-child { border-radius: 0 0.5em 0.5em 0; }
+.button-group {
+
+  margin-bottom: 10px;
+}
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.dish-container {
+  position:relative;
+}
+.element-item {
+  padding-left:0;
 }

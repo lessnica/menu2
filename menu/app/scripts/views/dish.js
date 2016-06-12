@@ -7,9 +7,10 @@ Menu.Views = Menu.Views || {};
 
   Menu.Views.Dish = Backbone.View.extend({
 
+    template: JST['app/scripts/templates/dish.ejs'],
 
     tagName:'div',
-    className:'row categories',
+    className:'row categories grid',
 
     events: {},
 
@@ -17,8 +18,9 @@ Menu.Views = Menu.Views || {};
 
       this.collection = new Menu.Collections.Dish(category);
       this.listenTo(this.collection, 'reset',this.onFetch);
+      this.listenTo(Backbone, 'filteredDish',this.filteredDish);
       this.render();
-    },
+          },
 
     onFetch:function(){
       this.collection.each(function(element,index,array) {
@@ -27,6 +29,7 @@ Menu.Views = Menu.Views || {};
     },
 
     render: function () {
+      this.$el.append(this.template);
       $('.right-block').append(this.$el);
     },
 
@@ -37,7 +40,33 @@ Menu.Views = Menu.Views || {};
       this.remove();
     },
 
-    detailedDish: false
+    detailedDish: false,
+
+    filterFns: {
+      // show if number is greater than 75
+      numberGreaterThan75: function() {
+        var number = $(this).find('.price').text();
+        return parseInt( number, 10 ) > 75;
+      }
+    },
+
+    filteredDish: function(event) {
+      var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'fitRows',
+        getSortData: {
+          name: '.dishName',
+          price: '.price',
+          category: '[data-category]'
+        }
+      });
+
+      var filterValue = $( event ).attr('data-filter');
+      // use filterFn if matches value
+      filterValue = this.filterFns[ filterValue ] || filterValue;
+      $grid.isotope({ filter: filterValue });
+      Backbone.trigger('animationRelaunch');
+    }
 
 
   });

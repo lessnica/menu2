@@ -17,7 +17,8 @@ Menu.Models = Menu.Models || {};
       img:'',
       name:'Unknown',
       description: '',
-      price:0
+      price:0,
+      dataCategory:''
     }
 
   });
