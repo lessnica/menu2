@@ -10,7 +10,7 @@ Menu.Views = Menu.Views || {};
     template: JST['app/scripts/templates/dish.ejs'],
 
     tagName:'div',
-    className:'row categories grid',
+    className:'row categories',
 
     events: {},
 
